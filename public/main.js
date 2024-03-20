@@ -1,4 +1,4 @@
-fetch("/itemNames").then(response => response.json())
+fetch("/").then(response => response.json())
 .then(itemNames => {
     itemNames.forEach(itemName => {
         const img = document.createElement("img")
