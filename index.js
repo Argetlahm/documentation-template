@@ -12,7 +12,7 @@ app.use(express.static("public")); // serve files from the public directory
 app.get("/data", (req, res) => {
     const folderPath = "./public/photos"
     const itemNames = fs.readdirSync(folderPath)
-    console.log(itemNames)
+    // console.log(itemNames)
     res.json(itemNames)
 })
 
