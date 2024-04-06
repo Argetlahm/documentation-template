@@ -1,11 +1,14 @@
 fetch("/data").then(response => response.json())
 .then(itemNames => {
     itemNames.forEach(itemName => {
+        const anchor = document.createElement("a")
+        setAllAttributes(anchor, [["href", "photos/"+itemName], ["target", "_blank"]])
         const img = document.createElement("img")
         img.src = `photos/${itemName}`;
         setAllAttributes(img, [["alt", itemName], ["width", 175], ["height", 175]])
         const photoArea = document.getElementsByClassName("photo-area")[0]
-        photoArea.appendChild(img)
+        photoArea.appendChild(anchor)
+        anchor.appendChild(img)
     });
 }).catch((error) => {
     console.log("Error:", error)
@@ -18,4 +21,4 @@ function setAllAttributes(elem, props) {
     })
 }
 
-// notes: perbaiki layout (css kacau balau)
+// notes: buat thumbnail
